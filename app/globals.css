@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.notification-animation {
+  @apply absolute right-[125%] translate-x-1/2 top-1/2 -translate-y-1/2 transition-all w-fit animate-textSlider;
+}

@@ -17,8 +17,14 @@ const NotificationBar = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center bg-[#ffbba0] text-[#0b0a18] w-full h-6 font-medium overflow-hidden text-sm whitespace-nowrap">
-      {notificationItems.map((item, index) => (activeIndex === index ? <p key={item}>{item}</p> : null))}
+    <div className="bg-[#ffbba0] text-[#0b0a18] w-full h-6 font-medium overflow-hidden text-sm relative whitespace-nowrap">
+      {notificationItems.map((item, index) =>
+        activeIndex === index ? (
+          <p key={item} className="notification-animation">
+            {item}
+          </p>
+        ) : null
+      )}
     </div>
   );
 };
