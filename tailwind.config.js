@@ -12,9 +12,9 @@ module.exports = {
       },
       keyframes: {
         textSlider: {
-          "0%": { right: "0", translateX: "100%" },
-          "20%,80%": { right: "50%", translateX: "-50%" },
-          "100%": { right: "100%", translateX: "-100%" },
+          "0%": { right: "0", top: "50%", transform: "translate(100%,-50%)" },
+          "20%,80%": { right: "50%", top: "50%", transform: "translate(50%,-50%)" },
+          "100%": { right: "100%", top: "50%", transform: "translate(-100%,-50%)" },
         },
       },
     },
