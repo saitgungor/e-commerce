@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import DropdownMenu from "./DropdownMenu";
 
 const Navbar = () => {
   return (
     <div className="w-full bg-white group group-hover:bg-black hover:bg-black">
       <div className="container h-16 w-full flex justify-between items-center mx-auto group">
-        <p className="text-black group-hover:text-white">Left Menu</p>
+        <DropdownMenu />
         <Link href="/">
           <div className="flex justify-center items-center">
             <Image
