@@ -6,7 +6,7 @@ import DropdownMenu from "./DropdownMenu";
 
 const Navbar = () => {
   return (
-    <div className="w-full bg-white group group-hover:bg-black hover:bg-black">
+    <div className="w-full bg-transparent group-[header] group-hover:bg-black hover:bg-white">
       <div className="container h-16 w-full flex justify-between items-center mx-auto group">
         <DropdownMenu />
         <Link href="/">
@@ -16,11 +16,11 @@ const Navbar = () => {
               alt="logo"
               height={42}
               width={74}
-              className="cursor-pointer transition-opacity duration-300 ease-in-out group-hover:invert"
+              className="cursor-pointer transition-opacity duration-300 ease-in-out invert group-hover:invert-0"
             />
           </div>
         </Link>
-        <p className="text-black group-hover:text-white">Right Menu</p>
+        <p className="text-white group-hover:text-black">Right Menu</p>
       </div>
     </div>
   );
