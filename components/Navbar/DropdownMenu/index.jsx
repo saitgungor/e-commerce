@@ -22,19 +22,14 @@ const DropdownMenu = () => {
           <NavigationMenuItem key={menuItem.name}>
             <NavigationMenuTrigger>{menuItem.name}</NavigationMenuTrigger>
             <NavigationMenuContent asChild>
-              <div className="flex p-4 gap-28">
-                <ul>
-                  <li>{menuItem.name}</li>
-                  {menuItem.items.map((item) => (
-                    <li className="whitespace-nowrap" key={menuItem.href + item.name}>
-                      {item.name}
-                    </li>
-                  ))}
-                </ul>
-                <div className="relative w-64 aspect-[625/417]">
-                  <Image src={menuItem.imgSrc} width={500} height={500} />
-                </div>
-              </div>
+              <ul style={{ backgroundImage: `url(${menuItem.bgImage})` }}>
+                <li>{menuItem.name}</li>
+                {menuItem.items.map((item) => (
+                  <li className="whitespace-nowrap" key={menuItem.href + item.name}>
+                    {item.name}
+                  </li>
+                ))}
+              </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
         ))}

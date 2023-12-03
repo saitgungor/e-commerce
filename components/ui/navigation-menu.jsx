@@ -47,7 +47,7 @@ const NavigationMenuTrigger = React.forwardRef(({ className, children, ...props 
       className="top-[1px] ml-1 h-3 w-3 transition-transform group-data-[state=open]/navMenu:rotate-180 "
       aria-hidden="true"
     />
-    <span className="w-[70%] h-0.5 bg-transparent group-hover/navMenu:bg-black absolute bottom-1.5 transition-colors duration-300" />
+    <span className="w-[70%] h-0.5 bg-transparent group-data-[state=open]/navMenu:bg-black  absolute bottom-1.5 transition-colors duration-300" />
   </NavigationMenuPrimitive.Trigger>
 ));
 NavigationMenuTrigger.displayName = NavigationMenuPrimitive.Trigger.displayName;
@@ -56,7 +56,8 @@ const NavigationMenuContent = React.forwardRef(({ className, ...props }, ref) =>
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      "left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto !duration-0",
+      "left-0 top-0 data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto !w-[36vw] bg-contain bg-no-repeat bg-right h-[24vh] max-h-[360px]",
+
       className
     )}
     {...props}
