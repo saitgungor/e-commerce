@@ -12,33 +12,32 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
+import { navbarMenuItems } from "@/constants/navbarMenuItems";
 
 const DropdownMenu = () => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Kadın</NavigationMenuTrigger>
-          <NavigationMenuContent asChild>
-            <div className="flex p-4 gap-28">
-              <ul>
-                <li>Kadın</li>
-                {["Üst Giyim", "Dış Giyim", "İç Giyim", "Takı & Aksesuar", "Çanta"].map((item) => (
-                  <li className="whitespace-nowrap" key={item}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="relative w-64 aspect-[625/417]">
-                <Image src="/header-menu/men.jpg" width={500} height={500} />
+        {navbarMenuItems.map((menuItem) => (
+          <NavigationMenuItem key={menuItem.name}>
+            <NavigationMenuTrigger>{menuItem.name}</NavigationMenuTrigger>
+            <NavigationMenuContent asChild>
+              <div className="flex p-4 gap-28">
+                <ul>
+                  <li>{menuItem.name}</li>
+                  {menuItem.items.map((item) => (
+                    <li className="whitespace-nowrap" key={menuItem.href + item.name}>
+                      {item.name}
+                    </li>
+                  ))}
+                </ul>
+                <div className="relative w-64 aspect-[625/417]">
+                  <Image src={menuItem.imgSrc} width={500} height={500} />
+                </div>
               </div>
-            </div>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Erkek</NavigationMenuTrigger>
-          <NavigationMenuContent>content 2</NavigationMenuContent>
-        </NavigationMenuItem>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        ))}
       </NavigationMenuList>
     </NavigationMenu>
   );
