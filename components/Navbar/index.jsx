@@ -6,8 +6,8 @@ import DropdownMenu from "./DropdownMenu";
 
 const Navbar = () => {
   return (
-    <div className="w-full bg-transparent group-[header] group-hover:bg-black hover:bg-white">
-      <div className="container h-16 w-full flex justify-between items-center mx-auto group">
+    <div className="w-full bg-transparent group-[header] group-hover:bg-black hover:bg-white transition-colors duration-300">
+      <div className="container h-16 w-full grid grid-cols-3 items-center mx-auto group">
         <DropdownMenu />
         <Link href="/">
           <div className="flex justify-center items-center">
@@ -20,7 +20,7 @@ const Navbar = () => {
             />
           </div>
         </Link>
-        <p className="text-white group-hover:text-black">Right Menu</p>
+        <p className="text-white group-hover:text-black transition-colors duration-300 justify-self-end">Right Menu</p>
       </div>
     </div>
   );
