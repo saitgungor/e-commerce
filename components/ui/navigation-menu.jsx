@@ -20,7 +20,7 @@ NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName;
 const NavigationMenuList = React.forwardRef(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.List
     ref={ref}
-    className={cn("group-[navMenu] group flex flex-1 list-none items-center justify-center space-x-1", className)}
+    className={cn("flex flex-1 list-none items-center justify-center space-x-1", className)}
     {...props}
   />
 ));
@@ -29,7 +29,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
 const navigationMenuTriggerStyle = cva(
-  "group-[navMenu] group inline-flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors duration-300 group-hover:!text-black data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+  "inline-flex items-center justify-center px-4 py-2 text-sm font-medium group-hover:!text-black"
 );
 
 const NavigationMenuTrigger = React.forwardRef(({ className, children, ...props }, ref) => (
@@ -37,16 +37,17 @@ const NavigationMenuTrigger = React.forwardRef(({ className, children, ...props 
     ref={ref}
     className={cn(
       navigationMenuTriggerStyle(),
-      "group-[header] text-white hover:border-b-2 border-white group-hover:border-black bg-transparent hover:!bg-white",
+      "text-white group-hover/header:text-black bg-transparent hover:!bg-white relative group/navMenu transition-colors duration-300",
       className
     )}
     {...props}
   >
     {children}
     <ChevronDown
-      className="relative top-[1px] ml-1 h-3 w-3 transition-transform group-data-[state=open]:rotate-180"
+      className="top-[1px] ml-1 h-3 w-3 transition-transform group-data-[state=open]/navMenu:rotate-180 "
       aria-hidden="true"
     />
+    <span className="w-[70%] h-0.5 bg-transparent group-hover/navMenu:bg-black absolute bottom-1.5 transition-colors duration-300" />
   </NavigationMenuPrimitive.Trigger>
 ));
 NavigationMenuTrigger.displayName = NavigationMenuPrimitive.Trigger.displayName;
