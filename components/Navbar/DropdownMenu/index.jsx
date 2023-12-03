@@ -11,6 +11,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import Image from "next/image";
 
 const DropdownMenu = () => {
   return (
@@ -18,7 +19,21 @@ const DropdownMenu = () => {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Kadın</NavigationMenuTrigger>
-          <NavigationMenuContent>content 1</NavigationMenuContent>
+          <NavigationMenuContent asChild>
+            <div className="flex p-4 gap-28">
+              <ul>
+                <li>Kadın</li>
+                {["Üst Giyim", "Dış Giyim", "İç Giyim", "Takı & Aksesuar", "Çanta"].map((item) => (
+                  <li className="whitespace-nowrap" key={item}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="relative w-64 aspect-[625/417]">
+                <Image src="/header-menu/men.jpg" width={500} height={500} />
+              </div>
+            </div>
+          </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Erkek</NavigationMenuTrigger>
