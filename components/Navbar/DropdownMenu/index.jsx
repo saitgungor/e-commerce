@@ -11,7 +11,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import Image from "next/image";
 import { navbarMenuItems } from "@/constants/navbarMenuItems";
 
 const DropdownMenu = () => {
@@ -20,12 +19,12 @@ const DropdownMenu = () => {
       <NavigationMenuList>
         {navbarMenuItems.map((menuItem) => (
           <NavigationMenuItem key={menuItem.name}>
-            <NavigationMenuTrigger>{menuItem.name}</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="text-lg">{menuItem.name}</NavigationMenuTrigger>
             <NavigationMenuContent asChild>
-              <ul style={{ backgroundImage: `url(${menuItem.bgImage})` }}>
-                <li>{menuItem.name}</li>
+              <ul style={{ backgroundImage: `url(${menuItem.bgImage})` }} className="p-4 flex flex-col gap-1 ">
+                <li className="font-semibold text-lg mb-1 cursor-pointer">{menuItem.name}</li>
                 {menuItem.items.map((item) => (
-                  <li className="whitespace-nowrap" key={menuItem.href + item.name}>
+                  <li className="whitespace-nowrap cursor-pointer hover:underline" key={menuItem.href + item.name}>
                     {item.name}
                   </li>
                 ))}
