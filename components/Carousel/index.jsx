@@ -27,11 +27,15 @@ const Carousel = () => {
 
   return (
     <div className="overflow-hidden flex w-screen h-[700px] justify-center">
-      <Link href={activeCarouselItem.href}>
-        <div className={`relative w-screen h-[700px] cursor-pointer`}>
-          <Image src={activeCarouselItem.imgSrc} alt={activeCarouselItem.alt} fill style={{ objectFit: "cover" }} />
-        </div>
-      </Link>
+      {carouselItems.map((item, index) =>
+        activeIndex === index ? (
+          <Link key={item.href} href={item.href}>
+            <div className={`relative w-screen h-[700px] next-slider-animation`}>
+              <Image src={item.imgSrc} alt={item.alt} fill style={{ objectFit: "cover" }} />
+            </div>
+          </Link>
+        ) : null
+      )}
     </div>
   );
 };
