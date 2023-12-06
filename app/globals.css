@@ -6,10 +6,6 @@
   @apply absolute transition-all w-fit animate-textSlider;
 }
 
-.next-slider-animation {
-  @apply transition-all animate-nextSlider;
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;

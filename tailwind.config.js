@@ -67,17 +67,11 @@ module.exports = {
           "80%": { right: "50%", top: "50%", transform: "translate(75%,-50%)" },
           "100%": { right: "100%", top: "50%", transform: "translate(-100%,-50%)" },
         },
-        nextSlider: {
-          "0%": { right: "0", top: "50%", transform: "translate(100%,-50%)" },
-          "20%,80%": { right: "50%", top: "50%", transform: "translate(50%,-50%)" },
-          "100%": { right: "100%", top: "50%", transform: "translate(-100%,-50%)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         textSlider: "textSlider 5s ease-in-out 1",
-        nextSlider: "nextSlider 6s ease-in-out 1",
       },
     },
   },
