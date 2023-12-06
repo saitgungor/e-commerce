@@ -25,7 +25,7 @@ const Carousel = () => {
   }, [activeIndex]);
 
   return (
-    <div className="w-screen h-[700px] overflow-hidden relative">
+    <div className="w-screen h-[700px] overflow-hidden relative -top-16">
       <div
         className="flex transition-all duration-1000 relative"
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}

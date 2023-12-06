@@ -6,7 +6,7 @@ import DropdownMenu from "./DropdownMenu";
 
 const Navbar = () => {
   return (
-    <div className="w-full bg-transparent group/header group-hover/header:bg-black hover:bg-white transition-colors duration-300">
+    <div className="w-full bg-transparent group/header group-hover/header:bg-black hover:bg-white transition-colors duration-300 z-20">
       <div className="container h-16 w-full grid grid-cols-3 items-center mx-auto">
         <DropdownMenu />
         <Link href="/">
