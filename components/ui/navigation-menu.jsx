@@ -37,7 +37,7 @@ const NavigationMenuTrigger = React.forwardRef(({ className, children, ...props 
     ref={ref}
     className={cn(
       navigationMenuTriggerStyle(),
-      "text-white group-hover/header:text-black bg-transparent hover:!bg-white relative group/navMenu transition-colors duration-300",
+      "text-white group-hover/header:text-black bg-transparent relative group/navMenu transition-colors duration-300",
       className
     )}
     {...props}
